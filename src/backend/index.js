@@ -24,29 +24,41 @@ app.post('/device/',function(req,res){
     }
     
 });
-app.get('/pepe/', function(req,res) {
+app.get('/devices/', function(req,res) {
     utils.query("select * from Devices",function(err,rsp,fields){
-        if(err!=null)
+        //if(err!=null)
         res.send(JSON.stringify(rsp));
     });
   
 });
-app.get('/devices/', function(req, res, next) {
+
+// app.get('/devices/', function(req, res, next) {
+//     devices = [
+//         { 
+//             'id': 1, 
+//             'name': 'Lampara 1', 
+//             'description': 'Luz living', 
+//             'state': 0, 
+//             'type': 1, 
+//         },
+//         { 
+//             'id': 2, 
+//             'name': 'Ventilador 1', 
+//             'description': 'Ventilador Habitacion', 
+//             'state': 1, 
+//             'type': 2, 
+            
+//         },
+//     ]
+//     res.send(JSON.stringify(devices)).status(200);
+// });
+
+
+app.get('/test2/', function(req,res) {
     devices = [
         { 
             'id': 1, 
-            'name': 'Lampara 1', 
-            'description': 'Luz living', 
-            'state': 0, 
-            'type': 1, 
-        },
-        { 
-            'id': 2, 
-            'name': 'Ventilador 1', 
-            'description': 'Ventilador Habitacion', 
-            'state': 1, 
-            'type': 2, 
-            
+            'name': 'hello2', 
         },
     ]
     res.send(JSON.stringify(devices)).status(200);

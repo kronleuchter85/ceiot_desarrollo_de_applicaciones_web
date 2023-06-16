@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="./static/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="./static/css/styles.css"  media="screen,projection"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script type="text/javascript" src="static/js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/persona.js"></script>
+      <script type="text/javascript" src="js/administrador.js"></script>
+      <script type="text/javascript" src="js/usuario.js"></script>
+      <script type="text/javascript" src="js/device.js"></script>
+      <script type="text/javascript" src="js/framework.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+
+    </head>
+    <body>
+        <main>
+            <!-- Navigation bar -->
+            <nav style="background-color:#124580">
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo left" style="margin-left: 15px;">Smart Home</a>
+                    <ul id="nav-mobile" class="right" style="margin-right: 15px;">
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </nav>	
+            <!-- Page Body -->
+            <div class="container">
+                <!-- <div class="row">
+                    <div class="col s1">1</div>
+                    <div class="col s1">2</div>
+                    <div class="col s1">3</div>
+                    <div class="col s1">4</div>
+
+                    <div class="col s1">5</div>
+                    <div class="col s1">6</div>
+                    <div class="col s1">7</div>
+                    <div class="col s1">8</div>
+
+                    <div class="col s1">9</div>
+                    <div class="col s1">10</div>
+                    <div class="col s1">11</div>
+                    <div class="col s1">12</div>
+                    
+                    
+                </div> -->
+                <div class="row">
+                </div>
+                <br />
+
+                <h3>Smart Home Web - Devices Manager</h3>
+
+                <div class="row">
+                    <div class="input-field col s12 xl6">
+                        <i  color="secondary"></i>
+                        <label>Nombre dispositivo</label>
+                        <input type="text" placeholder="lampara" id="deviceName">
+                    </div>
+                    <div class="input-field col s12 xl6">
+                        <i  color="secondary"></i>
+                        <label>Descripcion dispositivo</label>
+                        <input type="text" placeholder="lampara" id="deviceDesc">
+                    </div>
+                    <div class="input-field col s12">
+                        <select multiple id="c">
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Tipo 0</option>
+                          <option value="2">Tipo 1</option>
+                        </select>
+                        <label>Tipo de dispositivo</label>
+                      </div>
+                </div>
+                <p id="parrafo"></p>
+                <input type="button" class="btn" id="btnAgregar" value="Agregar">
+         
+             
+                <br/>
+                <!-- <div class="row">
+                    <div class="input-field col s12 m12 l12 xl12">
+                        <textarea id="textarea_1" class="materialize-textarea" style="height: 150px;" readonly></textarea>
+                    </div>
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="100" />
+                      </p>
+                    <div class="input-field col s12">
+                        <select multiple id="c">
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                        <label>Materialize Multiple Select</label>
+                      </div>
+                </div> -->
+                <div >
+
+                    <ul class="collection" id="listaDisp">
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col s12 m8 l4 xl6">
+                        <button class="btn waves-effect waves-light button-view" id="btnListar">Listar</button>
+                    </div>
+                </div>
+            </div>	
+        </main>
+		<!-- Page Footer -->
+        <footer class="page-footer" style="background-color:#124580">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s6">
+                        <h5 class="white-text">Smart Home</h5>
+                        <p class="grey-text text-lighten-4">Copyright ### - 2021</p>
+                    </div>
+                    <div class="col l6 s6">
+                        <h5 class="white-text right-align">Contact</h5>
+                        <p class="white-text right-align">
+                            <a class="grey-text text-lighten-3" href="!#">Email | </a>
+                            <a class="grey-text text-lighten-3" href="!#">Twitter | </a>
+                            <a class="grey-text text-lighten-3" href="!#">LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+  </html>
