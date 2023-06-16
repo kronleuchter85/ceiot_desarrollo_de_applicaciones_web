@@ -57,9 +57,6 @@ class Main implements EventListenerObject,HttpResponse {
         for (var disp of lista) {
             var checkPrender = document.getElementById("ck_" + disp.id);
             checkPrender.addEventListener("click", this);
-
-            
-
         }
         
     }
@@ -67,27 +64,31 @@ class Main implements EventListenerObject,HttpResponse {
         this.framework.ejecutarBackEnd("GET", "http://localhost:8000/devices",this);
     }
 
+    crearDispositivo(deviceName , deviceDescription , deviceType) {
+
+        var deviceInfo = {
+            "deviceName": deviceName 
+            , "deviceDescription":deviceDescription 
+            , "deviceType":deviceType};
+
+        this.framework.ejecutarBackEnd("POST", "http://localhost:8000/device",this , deviceInfo);
+    }
+
     handleEvent(event) {
         var elemento =<HTMLInputElement> event.target;
         console.log(elemento)
 
         if (event.target.id == "btnListar") {
-            alert("Listando");
             
             this.obtenerDispositivo();
-            for (var user of this.users) {
 
-                //TODO cambiar ESTO por mostrar estos datos separados por "-" 
-                //en un parrafo "etiqueta de tipo <p>"
-              
-            }
         } else if (event.target.id == "btnLogin") {
 
             var iUser = <HTMLInputElement>document.getElementById("iUser");
             var iPass = <HTMLInputElement>document.getElementById("iPass");
             var username: string = iUser.value;
             var password: string = iPass.value;
-
+            
             if (username.length > 3 && password.length>3) {
                 
                 //iriamos al servidor a consultar si el usuario y la cotraseña son correctas
@@ -97,11 +98,18 @@ class Main implements EventListenerObject,HttpResponse {
                 alert("el nombre de usuario es invalido");
             }
         } else if (event.target.id == "btnAgregar") {
-
             
-            alert("Agregar");
-            
+            alert("Crear dispositivo");
 
+            var devNameField = <HTMLInputElement>document.getElementById("deviceName");
+            var devDescField = <HTMLInputElement>document.getElementById("deviceDescription");
+            var devTypeField = <HTMLInputElement>document.getElementById("deviceType");
+            var devName: string = devNameField.value;
+            var devDescription: string = devDescField.value;
+            var devType = devTypeField.value;
+
+            this.crearDispositivo(devName , devDescription , devType );
+            
         } else if (elemento.id.startsWith("ck_")) {
             //Ir al backend y aviasrle que el elemento cambio de estado
             //TODO armar un objeto json con la clave id y status y llamar al metodo ejecutarBackend
@@ -130,9 +138,6 @@ window.addEventListener("load", () => {
     var main: Main = new Main();
     var btnListar: HTMLElement = document.getElementById("btnListar");
     btnListar.addEventListener("click", main);
-
-
-
 
     var btnAgregar: HTMLElement = document.getElementById("btnAgregar");
     btnAgregar.addEventListener("click", main);

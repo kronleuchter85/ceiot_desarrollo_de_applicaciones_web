@@ -21,7 +21,6 @@ class Framework{
       xmlReq.send();
     }
     
-//
   }
 
 }
