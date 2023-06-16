@@ -2,7 +2,7 @@ var M;
 
 class Main implements EventListenerObject,HttpResponse {
     users: Array<Usuario> = new Array();
-    framework: Framework = new Framework();
+    deviceService: DeviceService = new DeviceService();
    
     constructor() {
         var usr1 = new Usuario("mramos", "Matias");
@@ -16,7 +16,7 @@ class Main implements EventListenerObject,HttpResponse {
         //alert(JSON.stringify(obj));
 
     }
-    manejarRespueta(respueta: string) {
+    manejarRespueta(  respueta: string) {
         var lista: Array<Device> = JSON.parse(respueta);
 
         
@@ -61,7 +61,7 @@ class Main implements EventListenerObject,HttpResponse {
         
     }
     obtenerDispositivo() {
-        this.framework.ejecutarBackEnd("GET", "http://localhost:8000/devices",this);
+        this.deviceService.ejecutarBackEnd("GET", "http://localhost:8000/devices",this.manejarRespueta);
     }
 
     crearDispositivo(deviceName , deviceDescription , deviceType) {
@@ -71,7 +71,7 @@ class Main implements EventListenerObject,HttpResponse {
             , "deviceDescription":deviceDescription 
             , "deviceType":deviceType};
 
-        this.framework.ejecutarBackEnd("POST", "http://localhost:8000/device",this , deviceInfo);
+        this.deviceService.ejecutarBackEnd("POST", "http://localhost:8000/device",this.manejarRespueta , deviceInfo);
     }
 
     handleEvent(event) {
@@ -121,7 +121,7 @@ class Main implements EventListenerObject,HttpResponse {
             //el nombre  de usuario y el nombre de la persona
             // validando que no sean vacios
             console.log("yendo al back");
-            this.framework.ejecutarBackEnd("POST", "http://localhost:8000/device", this, {});
+            this.deviceService.ejecutarBackEnd("POST", "http://localhost:8000/device", this.manejarRespueta, {});
            
         }
     }
