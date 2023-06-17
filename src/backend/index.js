@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static('/home/node/app/static/'));
 
 //=======[ Main module code ]==================================================
-app.post('/device/',function(req,res){
+app.post('/devices/',function(req,res){
     
     console.log("Creando nuevo dispositivo");
   
