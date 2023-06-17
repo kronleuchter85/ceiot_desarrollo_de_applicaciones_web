@@ -38,6 +38,7 @@ class FrontUtils {
                 <span class="lever"></span>
                 On
                 </label>
+                <input type="button" class="btn" id="btnDelete" value="Eliminar">
             </div>
                 </a>
             </li>`;
