@@ -8,20 +8,20 @@ Trabajo practico integrador
 
 El presente trabajo practico es un fork del [repositorio](https://github.com/mramos88/app-fullstack-base-2023-i08) y se basa en el proyecto[Goto IoT](https://www.gotoiot.com/)(repo [Github de Goto IoT:](https://github.com/gotoiot)).
 
-### Backend Endpoints
-
-* GET /devices - Listar dispositivos: No toma parametros y devuelve una lista de los dispositivos
-* POST /devices - Crear dispositivo: Toma como parametro un objeto 
-* PUT /devices - Actualizar dispositivo: Toma como parametro un objeto con los atributos del dispositivo y los actualiza en la base de datos
-* DELETE /devices - Eliminar dispositivo: Toma como parametro el id de un dispositivo y lo elimina de la base de datos
-* PUT /devices/status - Actualizar status del dispositivo: Toma como parametro el status y el Id del dispositivo para actualizarlo en la base de datos.
-
 ### Funcionalidades provistas 
 
 * Eliminacion de dispositivos
 * Agregado de nuevos dispositivos
 * Edicion de dispositivos existentes
 * Actualizacion del status del dispositivo
+
+### API Endpoints
+
+* GET /devices - Listar dispositivos: No toma parametros y devuelve una lista de los dispositivos
+* POST /devices - Crear dispositivo: Toma como parametro un objeto 
+* PUT /devices - Actualizar dispositivo: Toma como parametro un objeto con los atributos del dispositivo y los actualiza en la base de datos
+* DELETE /devices - Eliminar dispositivo: Toma como parametro el id de un dispositivo y lo elimina de la base de datos
+* PUT /devices/status - Actualizar status del dispositivo: Toma como parametro el status y el Id del dispositivo para actualizarlo en la base de datos.
 
 ### Setup y ejecucion del proyecto
 
@@ -42,7 +42,7 @@ Al iniciar el servicio de la base de datos, si esta no está creada toma el arch
 
 Como ya pudiste ver, la aplicación se ejecuta sobre el ecosistema Docker, y en esta imagen podés ver el diagrama de arquitectura.
 
-![architecture](doc/architecture.png)
+![architecture](doc/DesarrolloDeAplicacionesWebIoT.png)
 
 #### El cliente web
 
