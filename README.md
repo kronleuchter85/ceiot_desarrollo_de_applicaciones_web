@@ -54,7 +54,15 @@ Las tecnologías utilizadas son las siguientes:
 
 
 
+### Instrucciones de uso
 
+Una vez completados los pasos para el setup del proyecto e ingresado al home de la WebApp [http://localhost:8000/] se puede visualizar lo siguiente:
 
+![screenshot](doc/captura_home.png)
 
+En el centro se puede visualizar la lista de dispositivos disponibles. En el caso de la captura arriba, sólo podemos encontrar Lampara 1. Podemos apreciar que los campos para poder visualizar sus atributos son en realidad del tipo textfield, por lo cual además vamos a poder cambiar sus valores desde ahí mismo. Para ello, una vez modificado cualquiera de sus valores, presionamos el botón 'Actualizar' y esto guardará los cambios.
+Mediante el botón 'Eliminar' vamos a poder eliminar el dispositivo de la base de datos, y mediante el componente checkbutton On/Off vamos a poder cambiar su estado de habilitación.
 
+Mediante el botón 'Agregar dispositivo' vamos a poder guardar un nuevo dispositivo con los valores ingresados en los campos indicados.
+
+Finalmente, mediante el botón 'Refrescar' podemos volver a traer todos los dispositivos disponibles, aunque esto no debería ser necesario ya que por cada creación, modificación, eliminación la lista se refresca automáticamente.
