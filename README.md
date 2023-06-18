@@ -3,9 +3,8 @@
 </a>
 
 
-UBA - Especializacion en Internet de las Cosas
-Trabajo practico integrador
-==============================================
+UBA - Especialización en Internet de las Cosas - Trabajo práctico integrador
+============================================================================================
 
 El presente trabajo practico es un fork del [repositorio](https://github.com/mramos88/app-fullstack-base-2023-i08) y se basa en el proyecto[Goto IoT](https://www.gotoiot.com/)(repo [Github de Goto IoT:](https://github.com/gotoiot)).
 
