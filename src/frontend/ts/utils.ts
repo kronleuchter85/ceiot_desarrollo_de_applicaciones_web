@@ -38,7 +38,7 @@ class FrontUtils {
                 <span class="lever"></span>
                 On
                 </label>
-                <input type="button" class="btn" id="btnDelete" value="Eliminar">
+                <input type="button" class="btn" id="btn_delete_${disp.id}" value="Eliminar">
             </div>
                 </a>
             </li>`;
