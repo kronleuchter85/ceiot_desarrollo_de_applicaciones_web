@@ -5,6 +5,21 @@ Trabajo práctico integrador
 
 El presente trabajo practico es un fork del [repositorio](https://github.com/mramos88/app-fullstack-base-2023-i08) y se basa en el proyecto[Goto IoT](https://www.gotoiot.com/)(repo [Github de Goto IoT:](https://github.com/gotoiot)).
 
+
+### Perspectiva del usuario de negocio - Instrucciones de uso
+
+Una vez completados los pasos para el setup del proyecto [https://github.com/kronleuchter85/ceiot_desarrollo_de_applicaciones_web#setup-y-ejecuci%C3%B3n-del-proyecto] e ingresado al home de la WebApp [http://localhost:8000/] se puede visualizar lo siguiente:
+
+![screenshot](doc/captura_home.png)
+
+En el centro se puede visualizar la lista de dispositivos disponibles. En el caso de la captura arriba, sólo podemos encontrar Lampara 1. Podemos apreciar que los campos para poder visualizar sus atributos son en realidad del tipo textfield, por lo cual además vamos a poder cambiar sus valores desde ahí mismo. Para ello, una vez modificado cualquiera de sus valores, presionamos el botón 'Actualizar' y esto guardará los cambios.
+Mediante el botón 'Eliminar' vamos a poder eliminar el dispositivo de la base de datos, y mediante el componente checkbutton On/Off vamos a poder cambiar su estado de habilitación.
+
+Mediante el botón 'Agregar dispositivo' vamos a poder guardar un nuevo dispositivo con los valores ingresados en los campos indicados.
+
+Finalmente, mediante el botón 'Refrescar' podemos volver a traer todos los dispositivos disponibles, aunque esto no debería ser necesario ya que por cada creación, modificación, eliminación la lista se refresca automáticamente.
+
+
 ### Arquitectura de la aplicación
 
 A continuación se puede apreciar una imagen de la arquitectura de la aplicación.
@@ -51,18 +66,3 @@ Las tecnologías utilizadas son las siguientes:
 * [PHPMyAdmin](https://www.phpmyadmin.net/) - Administrador web de base de datos.
 * [Material Design](https://material.io/design) - Bibliotecas de estilo responsive para aplicaciones web.
 * [TypeScript](https://www.typescriptlang.org/) - Superset de JavaScript tipado y con clases.
-
-
-
-### Instrucciones de uso
-
-Una vez completados los pasos para el setup del proyecto e ingresado al home de la WebApp [http://localhost:8000/] se puede visualizar lo siguiente:
-
-![screenshot](doc/captura_home.png)
-
-En el centro se puede visualizar la lista de dispositivos disponibles. En el caso de la captura arriba, sólo podemos encontrar Lampara 1. Podemos apreciar que los campos para poder visualizar sus atributos son en realidad del tipo textfield, por lo cual además vamos a poder cambiar sus valores desde ahí mismo. Para ello, una vez modificado cualquiera de sus valores, presionamos el botón 'Actualizar' y esto guardará los cambios.
-Mediante el botón 'Eliminar' vamos a poder eliminar el dispositivo de la base de datos, y mediante el componente checkbutton On/Off vamos a poder cambiar su estado de habilitación.
-
-Mediante el botón 'Agregar dispositivo' vamos a poder guardar un nuevo dispositivo con los valores ingresados en los campos indicados.
-
-Finalmente, mediante el botón 'Refrescar' podemos volver a traer todos los dispositivos disponibles, aunque esto no debería ser necesario ya que por cada creación, modificación, eliminación la lista se refresca automáticamente.
