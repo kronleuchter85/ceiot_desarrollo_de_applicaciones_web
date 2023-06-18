@@ -8,7 +8,7 @@ El presente trabajo practico es un fork del [repositorio](https://github.com/mra
 
 ### Perspectiva del usuario de negocio - Instrucciones de uso
 
-Una vez completados los pasos para el [setup del proyecto][https://github.com/kronleuchter85/ceiot_desarrollo_de_applicaciones_web#setup-y-ejecuci%C3%B3n-del-proyecto] e ingresado al home de la WebApp [http://localhost:8000/] se puede visualizar lo siguiente:
+Una vez completados los pasos para el [setup del proyecto](https://github.com/kronleuchter85/ceiot_desarrollo_de_applicaciones_web#setup-y-ejecuci%C3%B3n-del-proyecto) e ingresado al home de la [WebApp](http://localhost:8000/) se puede visualizar lo siguiente:
 
 ![screenshot](doc/captura_home.png)
 
