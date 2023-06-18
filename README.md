@@ -1,9 +1,6 @@
-<a href="https://www.gotoiot.com/">
-   <img src="doc/gotoiot-logo.png" alt="logo" title="Goto IoT" align="right" width="60" height="60" />
-</a>
-
-
-UBA - Especialización en Internet de las Cosas - Trabajo práctico integrador
+UBA - Especialización en Internet de las Cosas 
+Desarrollo de Aplicaciones Web
+Trabajo práctico integrador
 ============================================================================================
 
 El presente trabajo practico es un fork del [repositorio](https://github.com/mramos88/app-fullstack-base-2023-i08) y se basa en el proyecto[Goto IoT](https://www.gotoiot.com/)(repo [Github de Goto IoT:](https://github.com/gotoiot)).
