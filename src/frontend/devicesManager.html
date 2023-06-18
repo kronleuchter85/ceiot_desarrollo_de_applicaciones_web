@@ -28,29 +28,24 @@
             </nav>	
             <!-- Page Body -->
             <div class="container">
-                <!-- <div class="row">
-                    <div class="col s1">1</div>
-                    <div class="col s1">2</div>
-                    <div class="col s1">3</div>
-                    <div class="col s1">4</div>
-
-                    <div class="col s1">5</div>
-                    <div class="col s1">6</div>
-                    <div class="col s1">7</div>
-                    <div class="col s1">8</div>
-
-                    <div class="col s1">9</div>
-                    <div class="col s1">10</div>
-                    <div class="col s1">11</div>
-                    <div class="col s1">12</div>
-                    
-                    
-                </div> -->
                 <div class="row">
                 </div>
                 <br />
 
                 <h3>Smart Home Web - Devices Manager</h3>
+
+                <br/>
+                <div >
+
+                    <ul class="collection" id="listaDisp">
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col s12 m8 l4 xl6">
+                        <button class="btn waves-effect waves-light button-view" id="btnListar">Refrescar</button>
+                    </div>
+                </div>
+
 
                 <div class="row">
                     <div class="input-field col s12 xl6">
@@ -64,7 +59,7 @@
                         <input type="text" placeholder="lampara inteligente" id="deviceDescription">
                     </div>
                     <div class="input-field col s12">
-                        <select multiple id="deviceType">
+                        <select  id="deviceType">
                           <option value="0">Tipo 0</option>
                           <option value="1">Tipo 1</option>
                         </select>
@@ -72,37 +67,10 @@
                       </div>
                 </div>
                 <p id="parrafo"></p>
-                <input type="button" class="btn" id="btnAgregar" value="Agregar">
+                <input type="button" class="btn" id="btnAgregar" value="Agregar Dispositivo">
          
-             
-                <br/>
-                <!-- <div class="row">
-                    <div class="input-field col s12 m12 l12 xl12">
-                        <textarea id="textarea_1" class="materialize-textarea" style="height: 150px;" readonly></textarea>
-                    </div>
-                    <p class="range-field">
-                        <input type="range" id="test5" min="0" max="100" />
-                      </p>
-                    <div class="input-field col s12">
-                        <select multiple id="c">
-                          <option value="" disabled selected>Choose your option</option>
-                          <option value="1">Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
-                        </select>
-                        <label>Materialize Multiple Select</label>
-                      </div>
-                </div> -->
-                <div >
 
-                    <ul class="collection" id="listaDisp">
-                    </ul>
-                </div>
-                <div class="row">
-                    <div class="col s12 m8 l4 xl6">
-                        <button class="btn waves-effect waves-light button-view" id="btnListar">Listar</button>
-                    </div>
-                </div>
+
             </div>	
         </main>
 		<!-- Page Footer -->

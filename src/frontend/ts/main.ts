@@ -36,8 +36,19 @@ class Main implements EventListenerObject {
         } , deviceInfo);
     }
 
-    updateDevice(deviceId , deviceInfo){
+    updateDevice(deviceId , devName , devDescription , devType){
+        
+        var deviceInfo = {
+            "deviceId": deviceId 
+            , "deviceName": devName 
+            , "deviceDescription":devDescription 
+            , "deviceType":devType 
+        };
+        console.log("Updating device (" + deviceId + ") withstatus (" + JSON.stringify(deviceInfo) );
 
+        this.deviceService.invokeBackEnd("PUT", "/devices", (result: string) : void => {
+            this.getDevices();
+        } , deviceInfo);
     }
 
     updateDeviceStatus(deviceId , deviceStatus){
@@ -65,17 +76,26 @@ class Main implements EventListenerObject {
             var devNameField = <HTMLInputElement>document.getElementById("deviceName");
             var devDescField = <HTMLInputElement>document.getElementById("deviceDescription");
             var devTypeField = <HTMLInputElement>document.getElementById("deviceType");
-            var devName: string = devNameField.value;
-            var devDescription: string = devDescField.value;
-            var devType = devTypeField.value;
 
-            this.createDevice(devName , devDescription , devType );
+            this.createDevice(devNameField.value , devDescField.value , devTypeField.value );
             
         } else if(element.id.startsWith("btnDelete_")){
             var deviceIdIndex = element.id.indexOf("_");
             var deviceId = element.id.substring(deviceIdIndex+1);
 
             this.deleteDevice(deviceId);
+
+        } else if(element.id.startsWith("btnUpdate_")){
+
+            var deviceIdIndex = element.id.indexOf("_");
+            var deviceId = element.id.substring(deviceIdIndex+1);
+            console.log("Updating device " + deviceId);
+
+            var devNameField = <HTMLInputElement>document.getElementById("txtDeviceName_" + deviceId);
+            var devDescField = <HTMLInputElement>document.getElementById("txtDeviceDescription_" + deviceId);
+            var devTypeField = <HTMLInputElement>document.getElementById("txtDeviceType_" + deviceId);
+
+            this.updateDevice(deviceId , devNameField.value , devDescField.value , devTypeField.value);
 
         } else if(element.id.startsWith("checkStatus_")){
             var deviceIdIndex = element.id.indexOf("_");
@@ -96,9 +116,12 @@ window.addEventListener("load", () => {
     var instances = M.Datepicker.init(elemsC, {autoClose:true});
 
     var main: Main = new Main();
+    
     var btnListar: HTMLElement = document.getElementById("btnListar");
     btnListar.addEventListener("click", main);
 
     var btnAgregar: HTMLElement = document.getElementById("btnAgregar");
     btnAgregar.addEventListener("click", main);
+
+    main.getDevices();
 });
