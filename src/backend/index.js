@@ -32,53 +32,72 @@ app.post('/devices/',function(req,res){
             res.send("el texto no es valido");
         }else{
             console.log(JSON.stringify(result));
-            console.log("Row inserted with id = " + result.insertId);
-            console.log("status 200 ");
+            console.log("200 - Row inserted with id = " + result.insertId);
             res.status(200);
-            res.send("Todo ok");
+            res.send("Row inserted with id = " + result.insertId);
+        }
+    });
+});
+
+
+app.put('/devices/status',function(req,res){
+    
+    console.log("Cambiando el status de un dispositivo");
+  
+    console.log("deviceId =" + req.body.deviceId);
+    console.log("deviceStatus =" + req.body.deviceStatus);
+
+    var query = "UPDATE Devices SET state = ? where id = ?";
+    var params = [req.body.deviceStatus , req.body.deviceId ];
+
+    utils.query(query ,params, function(err,result){
+
+        if (err){
+            console.log(JSON.stringify(err));
+            console.log("status 409 - no se pudo actualizar el estado del dispositivo");
+            res.status(409);
+            res.send("no se pudo actualizar el estado del dispositivo");
+        }else{
+            console.log(JSON.stringify(result));
+            console.log("200 - Dispositivo actualizado " );
+            res.status(200);
+            res.send("Dispositivo actualizado" );
         }
     });
 });
 
 app.get('/devices/', function(req,res) {
-    utils.query("select * from Devices",function(err,rsp,fields){
-        //if(err!=null)
-        res.send(JSON.stringify(rsp));
+    utils.query("select * from Devices",function(err,result,fields){
+        if(err){
+            console.log(JSON.stringify(err));
+            res.status(409);
+            res.send("Error recuperando dispositivos");
+        }else{
+            console.log(JSON.stringify(result));
+            console.log("Devolviendo dispositivos");
+            res.status(200);
+            res.send(JSON.stringify(result));
+        }
     });
-  
 });
 
-// app.get('/devices/', function(req, res, next) {
-//     devices = [
-//         { 
-//             'id': 1, 
-//             'name': 'Lampara 1', 
-//             'description': 'Luz living', 
-//             'state': 0, 
-//             'type': 1, 
-//         },
-//         { 
-//             'id': 2, 
-//             'name': 'Ventilador 1', 
-//             'description': 'Ventilador Habitacion', 
-//             'state': 1, 
-//             'type': 2, 
-            
-//         },
-//     ]
-//     res.send(JSON.stringify(devices)).status(200);
-// });
-
-
-// app.get('/test2/', function(req,res) {
-//     devices = [
-//         { 
-//             'id': 1, 
-//             'name': 'hello2', 
-//         },
-//     ]
-//     res.send(JSON.stringify(devices)).status(200);
-// });
+app.delete('/devices/', function(req,res) {
+    var query = "DELETE FROM Devices WHERE id = ?";
+    var params = [req.body.deviceId] ;
+    console.log("eliminando dispositivo " + params);
+    utils.query( query ,params ,function(err,result,fields){
+        if (err){
+            console.log(JSON.stringify(err));
+            res.status(409);
+            res.send("Error eliminando dispositivo");
+        }else{
+            console.log(JSON.stringify(result));
+            console.log("Dispositivo eliminado");
+            res.status(200);
+            res.send("Dispositivo eliminado");
+        }
+    });
+});
 
 app.listen(PORT, function(req, res) {
     console.log("NodeJS API running correctly");

@@ -25,14 +25,42 @@ class Main implements EventListenerObject {
         } , deviceInfo);
     }
 
-    handleEvent(event) {
-        var elemento =<HTMLInputElement> event.target;
-        console.log(elemento)
+    deleteDevice(deviceId){
 
-        if (event.target.id == "btnListar") {
+        var deviceInfo = {
+            "deviceId": deviceId 
+        };
+
+        this.deviceService.invokeBackEnd("DELETE", "/devices", (result: string) : void => {
+            this.getDevices();
+        } , deviceInfo);
+    }
+
+    updateDevice(deviceId , deviceInfo){
+
+    }
+
+    updateDeviceStatus(deviceId , deviceStatus){
+        console.log("Updating device (" + deviceId + ") withstatus (" + deviceStatus + ")");
+
+        var deviceInfo = {
+            "deviceId": deviceId 
+            , "deviceStatus":deviceStatus 
+        };
+
+        this.deviceService.invokeBackEnd("PUT", "/devices/status", (result: string) : void => {
+            this.getDevices();
+        } , deviceInfo);
+
+    }
+
+    handleEvent(event) {
+        var element =<HTMLInputElement> event.target;
+
+        if (element.id == "btnListar") {
             this.getDevices();
        
-        } else if (event.target.id == "btnAgregar") {
+        } else if (element.id == "btnAgregar") {
             
             var devNameField = <HTMLInputElement>document.getElementById("deviceName");
             var devDescField = <HTMLInputElement>document.getElementById("deviceDescription");
@@ -43,6 +71,18 @@ class Main implements EventListenerObject {
 
             this.createDevice(devName , devDescription , devType );
             
+        } else if(element.id.startsWith("btnDelete_")){
+            var deviceIdIndex = element.id.indexOf("_");
+            var deviceId = element.id.substring(deviceIdIndex+1);
+
+            this.deleteDevice(deviceId);
+
+        } else if(element.id.startsWith("checkStatus_")){
+            var deviceIdIndex = element.id.indexOf("_");
+            var deviceId = element.id.substring(deviceIdIndex+1);
+            var status = element.checked;
+
+            this.updateDeviceStatus(deviceId , status);
         }
     }
 }

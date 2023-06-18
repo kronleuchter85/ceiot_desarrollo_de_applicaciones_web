@@ -30,15 +30,15 @@ class FrontUtils {
                 Off
                 `;
                 if (disp.state) {
-                    item +=`<input type="checkbox" checked id="ck_${disp.id}">`;
+                    item +=`<input type="checkbox" checked id="checkStatus_${disp.id}">`;
                 } else {
-                    item +=`<input type="checkbox" id="ck_${disp.id}" >`;
+                    item +=`<input type="checkbox" id="checkStatus_${disp.id}" >`;
                 }
                 item += `
                 <span class="lever"></span>
                 On
                 </label>
-                <input type="button" class="btn" id="btn_delete_${disp.id}" value="Eliminar">
+                <input type="button" class="btn" id="btnDelete_${disp.id}" value="Eliminar">
             </div>
                 </a>
             </li>`;
@@ -47,8 +47,10 @@ class FrontUtils {
         }
         
         for (var disp of lista) {
-            var checkPrender = document.getElementById("ck_" + disp.id);
+            var checkPrender = document.getElementById("checkStatus_" + disp.id);
             checkPrender.addEventListener("click", obj);
+            var btnDelete = document.getElementById("btnDelete_" + disp.id);
+            btnDelete.addEventListener("click", obj);
         }
         
     }
