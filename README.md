@@ -1,5 +1,5 @@
 UBA - Especialización en Internet de las Cosas 
-Desarrollo de Aplicaciones Web
+Desarrollo de Aplicaciones Web - 
 Trabajo práctico integrador
 ============================================================================================
 
